@@ -19,23 +19,9 @@ public class Explosive : MonoBehaviour
         cube.WillDisappear -= Explode;
     }
 
-    private void Explode()
+    private void Explode(List<Rigidbody> explodableObjects)
     {
-        foreach (var explodableObject in GetExplodableObjects())
-        {
+        foreach (var explodableObject in explodableObjects)
             explodableObject.AddExplosionForce(_explosionForce, transform.position, _explosionRadius);
-        }
-    }
-
-    private List<Rigidbody> GetExplodableObjects()
-    {
-        List<Rigidbody> explodableObjects = new List<Rigidbody>();
-        Collider[] hits = Physics.OverlapSphere(transform.position, _explosionRadius);
-
-        foreach (var hit in hits)
-            if (hit.attachedRigidbody != null && hit.GetComponent<Marker>().Creator == gameObject)
-                explodableObjects.Add(hit.attachedRigidbody);
-
-        return explodableObjects;
     }
 }

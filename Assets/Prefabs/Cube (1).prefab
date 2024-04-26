@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 441744413612957328}
   - component: {fileID: 3990981202643900214}
   - component: {fileID: 3842719325184147897}
-  - component: {fileID: 2993520930143512341}
+  - component: {fileID: 823851507658288610}
   - component: {fileID: 9134801246226193465}
   - component: {fileID: 8667824121774352700}
   m_Layer: 0
@@ -136,7 +136,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &2993520930143512341
+--- !u!114 &823851507658288610
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5460734388349053248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6e8d60da44ad81d44aa1c1729dd2fa3d, type: 3}
+  m_Script: {fileID: 11500000, guid: 2414adddf4cde76419900339a641a2b0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &9134801246226193465
@@ -160,6 +160,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 635430a8f967a3b45931dc3b6b39c35b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _explosionRadius: 25
+  _explosionForce: 200
 --- !u!114 &8667824121774352700
 MonoBehaviour:
   m_ObjectHideFlags: 0

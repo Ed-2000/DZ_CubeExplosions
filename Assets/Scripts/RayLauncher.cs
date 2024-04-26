@@ -3,12 +3,12 @@ using UnityEngine;
 
 public class RayLauncher : MonoBehaviour
 {
-    public event Action<Cube> HitInCube;
-
     [SerializeField] private float _maxDistance = 10;
     
     private Camera _camera;
     private Ray _ray;
+
+    public event Action<Cube> HitInCube;
 
     private void Start()
     {
@@ -24,15 +24,11 @@ public class RayLauncher : MonoBehaviour
     private void ShootRay()
     {
         _ray = _camera.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
         Debug.DrawRay(_ray.origin, _ray.direction * _maxDistance, Color.green);
 
-        if (Physics.Raycast(_ray, out hit, Mathf.Infinity))
+        if (Physics.Raycast(_ray, out RaycastHit hit, Mathf.Infinity))
         {
-            Cube cube = hit.transform.GetComponent<Cube>();
-
-            if (cube != null)
+            if (hit.transform.TryGetComponent<Cube>(out Cube cube))
                 HitInCube?.Invoke(cube);
         }
     }
