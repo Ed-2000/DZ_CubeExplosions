@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Cube))]
 public class Explosive : MonoBehaviour
 {
     [SerializeField] private float _explosionRadius = 25;
