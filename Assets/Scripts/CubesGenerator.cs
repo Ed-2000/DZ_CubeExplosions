@@ -19,7 +19,7 @@ public class CubesGenerator : MonoBehaviour
     {
         if (Random.value <= ChanceOfSeparation)
         {
-            int cubesCount = UnityEngine.Random.Range(_minCounOfCube, _maxCounOfCube + 1);
+            int cubesCount = Random.Range(_minCounOfCube, _maxCounOfCube + 1);
             Vector3 cubeScale = gameObject.transform.localScale / _sizingFactor;
 
             for (int i = 0; i < cubesCount; i++)

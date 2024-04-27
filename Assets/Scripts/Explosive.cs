@@ -7,17 +7,17 @@ public class Explosive : MonoBehaviour
     [SerializeField] private float _explosionRadius = 25;
     [SerializeField] private float _explosionForce = 200;
 
-    private Cube cube;
+    private Cube _cube;
 
     private void OnEnable()
     {
-        cube = transform.GetComponent<Cube>();
-        cube.WillDisappear += DisappearanceHandler;
+        _cube = transform.GetComponent<Cube>();
+        _cube.WillDisappear += DisappearanceHandler;
     }
 
     private void OnDisable()
     {
-        cube.WillDisappear -= DisappearanceHandler;
+        _cube.WillDisappear -= DisappearanceHandler;
     }
 
     private void DisappearanceHandler(List<Rigidbody> explodableObjects)
